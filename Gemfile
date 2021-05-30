@@ -34,6 +34,10 @@ gem 'rest-client', '~> 2.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'ajax-datatables-rails'
+gem 'bootstrap', '~> 5.0.1'
+gem 'jquery-datatables'
+gem 'jquery-rails'
 gem 'rubocop-rails', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
