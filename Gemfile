@@ -35,7 +35,7 @@ gem 'rest-client', '~> 2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'ajax-datatables-rails'
-gem 'bootstrap', '~> 5.0.1'
+gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-datatables'
 gem 'jquery-rails'
 gem 'rubocop-rails', require: false
