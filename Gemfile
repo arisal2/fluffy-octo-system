@@ -36,6 +36,7 @@ gem 'rest-client', '~> 2.1'
 # gem 'capistrano-rails', group: :development
 gem 'ajax-datatables-rails'
 gem 'bootstrap', '~> 4.0.0'
+gem 'chartkick'
 gem 'jquery-datatables'
 gem 'jquery-rails'
 gem 'rubocop-rails', require: false
