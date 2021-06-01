@@ -7,16 +7,16 @@
 		<br />
 		<div class="row">
 			<div class="col-md-3">
-				<%= fa_icon "ambulance" %>&nbsp;&nbsp;Currently Active: <span class="positive"><%= currently_active %></span>
+				<%= fa_icon "ambulance" %>&nbsp;&nbsp;Currently Active: <span class="positive"><%= world_data_top_section('active') %></span>
 			</div>
 			<div class="col-md-3">
-				<%= fa_icon "file" %>&nbsp;&nbsp;Total Confirmed: <span class="new-case"><%= total_confirmed %></span>
+				<%= fa_icon "file" %>&nbsp;&nbsp;Total Confirmed: <span class="new-case"><%= world_data_top_section('cases') %></span>
 			</div>
 			<div class="col-md-3">
-				<%= fa_icon "heartbeat" %>&nbsp;&nbsp;Total Recovered: <span class="favorable"><%= total_recovered %></span>
+				<%= fa_icon "heartbeat" %>&nbsp;&nbsp;Total Recovered: <span class="favorable"><%= world_data_top_section('recovered') %></span>
 			</div>
 			<div class="col-md-3">
-				<%= fa_icon "bed" %>&nbsp;&nbsp;Total Deaths: <span class="critical"><%= total_deaths %></span>
+				<%= fa_icon "bed" %>&nbsp;&nbsp;Total Deaths: <span class="critical"><%= world_data_top_section('deaths') %></span>
 			</div>
 		</div>
 		<br />

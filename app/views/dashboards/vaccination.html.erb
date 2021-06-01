@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row"> 
 	<%= render 'shared/sidebar' %>
 	<div class="col-md-10">
 		<div class="row top-header">
@@ -7,10 +7,10 @@
 		<br />
 		<div class="row">
 			<div class="col-md-3">
-				<%= fa_icon "plus-square" %>&nbsp;&nbsp;Total Vaccinations: <span class="positive"><%= total_vaccinations %></span>
+				<%= fa_icon "plus-square" %>&nbsp;&nbsp;Total Vaccinations: <span class="positive"><%= vaccination_top_section('total_vaccinations') %></span>
 			</div>
 			<div class="col-md-3">
-				<%= fa_icon "users" %>&nbsp;&nbsp;Total Population: <span class="new-case"><%= total_population %></span>
+				<%= fa_icon "users" %>&nbsp;&nbsp;Total Population: <span class="new-case"><%= vaccination_top_section('population') %></span>
 			</div>
 		</div>
 		<br />
