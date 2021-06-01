@@ -5,16 +5,15 @@
     color: orange;
 }
 
-.new-death,
-.case-critical {
+.critical {
     color: red;
 }
 
-.new-recovered {
+.favorable {
     color: green;
 }
 
-.case-active {
+.positive {
     color: blue;
 }
 
@@ -37,8 +36,12 @@ h6 {
 }
 
 li {
-    font-size: 12px;
+    font-size: 15px;
     a {
         color: darkslategrey
     }
+}
+
+.not-available {
+    color: black !important
 }

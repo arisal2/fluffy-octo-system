@@ -1,7 +1,24 @@
 <div class="row">
     <%= render 'shared/sidebar' %>
-    <div class="container col-md-10">
-        <table id="vaccine-data" class="table table-hover" %>
+    <div class="col-md-10">
+        <div class="row top-header">
+            <h6> <%= fa_icon "line-chart" %> Data on COVID-19 vaccinations about the Coronavirus Pandemic. </h6>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3">
+                <%= fa_icon "plus-square" %>&nbsp;&nbsp;Total Vaccinations: <span class="positive"><%= total_vaccinations %></span>
+            </div>
+            <div class="col-md-3">
+                <%= fa_icon "users" %>&nbsp;&nbsp;Total Population: <span class="new-case"><%= total_population %></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <h6> <%= fa_icon "table" %> Reported Cases by Country, Territory, or Conveyance </h6>
+        </div>
+        <br />
+        <table id="vaccine-data" class="table table-striped" %>
             <thead>
                 <tr>
                     <th>Continent</th>
@@ -23,16 +40,16 @@
                 <tr>
                     <td><%= data.second["continent"]%></td>
                     <td><%= data.second["location"]%></td>
-                    <td><%= data.second["new_vaccinations"]%></td>
-                    <td><%= data.second["people_vaccinated"]%></td>
-                    <td><%= data.second["people_fully_vaccinated"]%></td>
-                    <td><%= data.second["total_vaccinations"]%></td>
-                    <td><%= data.second["new_tests"]%></td>
-                    <td><%= data.second["total_tests"]%></td>
-                    <td><%= data.second["population"]%></td>
-                    <td><%= data.second["median_age"]%></td>
-                    <td><%= data.second["aged_65_older"]%></td>
-                    <td><%= data.second["aged_70_older"]%></td>
+                    <td class="positive"><%= number_with_delimiter("#{data.second["new_vaccinations"]}", delimiter: ',')%></td>
+                    <td class="favorable"><%= number_with_delimiter(data.second["people_vaccinated"], delimiter: ',')%></td>
+                    <td class="favorable"><%= number_with_delimiter(data.second["people_fully_vaccinated"], delimiter: ',')%></td>
+                    <td class="positive"><%= number_with_delimiter(data.second["total_vaccinations"], delimiter: ',')%></td>
+                    <td class="positive"><%= number_with_delimiter("#{data.second["new_tests"]}")%></td>
+                    <td class="favorable"><%= number_with_delimiter(data.second["total_tests"], delimiter: ',')%></td>
+                    <td><%= number_with_delimiter(data.second["population"], delimiter: ',')%></td>
+                    <td><%= number_with_delimiter(data.second["median_age"], delimiter: ',')%></td>
+                    <td><%= number_with_delimiter(data.second["aged_65_older"], delimiter: ',')%></td>
+                    <td><%= number_with_delimiter(data.second["aged_70_older"], delimiter: ',')%></td>
                 </tr>
                 <% end %>
             </tbody>
@@ -44,6 +61,9 @@
 <script>
     $(document).ready(function() {
         $("#vaccine-data").dataTable({
+            select: true,
+            responsive: true,
+            scrollX: true,
             dom: 'Bfrtip',
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'

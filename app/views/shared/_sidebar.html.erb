@@ -2,18 +2,24 @@
     <ul>
         <br>
         <div class="sidebar-element">
-            <%= fa_icon "medkit" %>
-            <li><%= link_to "World Data", world_data_dashboards_path %></li>
+            <li>
+                <%= fa_icon "medkit" %>
+                <%= link_to "Cases", world_data_dashboards_path %>
+            </li>
         </div>
         <br>
         <div class="sidebar-element">
-            <%= fa_icon "stethoscope" %>
-            <li><%= link_to "Vaccination Data", vaccination_dashboards_path %></li>
+            <li>
+                <%= fa_icon "stethoscope" %>
+                <%= link_to "Vaccine", vaccination_dashboards_path %>
+            </li>
         </div>
         <br>
         <div class="sidebar-element">
-            <%= fa_icon "map-o" %>
-            <li><%= link_to "World Map", world_map_dashboards_path %></li>
+            <li>
+                <%= fa_icon "map-o" %>
+                <%= link_to "Maps", world_map_dashboards_path %>
+            </li>
         </div>
         <br>
         <div class="sidebar-element">
