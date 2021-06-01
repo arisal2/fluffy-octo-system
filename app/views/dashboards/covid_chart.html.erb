@@ -1,121 +1,121 @@
 <div class="row">
 	<%= render 'shared/sidebar' %>
 	<div class="col-md-10">
-      <div id="covid-area-chart"></div>
-      <div id="covid-bar-chart"></div>
-  </div>
+		<div id="covid-area-chart"></div>
+		<div id="covid-bar-chart"></div>
+		</div>
 </div>
 
 
 <script>
-  Highcharts.chart('covid-area-chart', {
-    chart: {
-      type: 'areaspline'
-    },
-    title: {
-      text: 'Total Cumulative Worldwide Cases (Since 2020-01-21)'
-    },
-    legend: {
-      layout: 'vertical',
-      align: 'left',
-      verticalAlign: 'top',
-      x: 150,
-      y: 100,
-      floating: true,
-      borderWidth: 1,
-      backgroundColor:
-        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF'
-    },
-    xAxis: {
-      categories: <%= raw area_chart_data(:date) %>,
-      plotBands: [{
-        from: 4.5,
-        to: 6.5,
-        color: 'rgba(68, 170, 213, .2)'
-      }]
-    },
-    yAxis: {
-      title: {
-        text: 'Number of Cases'
-      }
-    },
-    tooltip: {
-      shared: true,
-    },
-    credits: {
-      enabled: false
-    },
-    plotOptions: {
-      areaspline: {
-        fillOpacity: 0.5
-      }
-    },
-    series: [{
-      name: 'recovered',
-      data: <%= area_chart_data(:recovered) %>
-    }, {
-      name: 'deaths',
-      data: <%= area_chart_data(:deaths) %>
-    },{
-      name: 'active',
-      data: <%= area_chart_data(:active) %>
-    }]
-  });
+	Highcharts.chart('covid-area-chart', {
+		chart: {
+			type: 'areaspline'
+		},
+		title: {
+			text: 'Total Cumulative Worldwide Cases (Since 2020-01-21)'
+		},
+		legend: {
+			layout: 'vertical',
+			align: 'left',
+			verticalAlign: 'top',
+			x: 150,
+			y: 100,
+			floating: true,
+			borderWidth: 1,
+			backgroundColor:
+				Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF'
+		},
+		xAxis: {
+			categories: <%= raw area_chart_data(:date) %>,
+			plotBands: [{
+				from: 4.5,
+				to: 6.5,
+				color: 'rgba(68, 170, 213, .2)'
+			}]
+		},
+		yAxis: {
+			title: {
+				text: 'Number of Cases'
+			}
+		},
+		tooltip: {
+			shared: true,
+		},
+		credits: {
+			enabled: false
+		},
+		plotOptions: {
+			areaspline: {
+				fillOpacity: 0.5
+			}
+		},
+		series: [{
+			name: 'recovered',
+			data: <%= area_chart_data(:recovered) %>
+		}, {
+			name: 'deaths',
+			data: <%= area_chart_data(:deaths) %>
+		},{
+			name: 'active',
+			data: <%= area_chart_data(:active) %>
+		}]
+	});
 
-  Highcharts.chart('covid-bar-chart', {
-    chart: {
-      type: 'bar'
-    },
-    title: {
-      text: 'Covid-19 test per continent'
-    },
-    xAxis: {
-      categories: <%= raw bar_chart_data(:continents) %>,
-      title: {
-        text: null
-      }
-    },
-    yAxis: {
-      min: 0,
-      title: {
-        text: 'Population (millions)',
-        align: 'high'
-      },
-      labels: {
-        overflow: 'justify'
-      }
-    },
-    tooltip: {
-      valueSuffix: ' millions'
-    },
-    plotOptions: {
-      bar: {
-        dataLabels: {
-          enabled: true
-        }
-      }
-    },
-    legend: {
-      layout: 'vertical',
-      align: 'right',
-      verticalAlign: 'top',
-      x: -40,
-      y: 80,
-      floating: true,
-      borderWidth: 1,
-      backgroundColor:
-        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-      shadow: true
-    },
-    credits: {
-      enabled: false
-    },
-    series: [{
-      name: 'Population',
-      data: <%= bar_chart_data(:population) %>
-    }, {
-      name: 'Number of Tests',
-      data: <%= bar_chart_data(:tests) %>
-    }]
-  });
+	Highcharts.chart('covid-bar-chart', {
+		chart: {
+			type: 'bar'
+		},
+		title: {
+			text: 'Covid-19 test per continent'
+		},
+		xAxis: {
+			categories: <%= raw bar_chart_data(:continents) %>,
+			title: {
+				text: null
+			}
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: 'Population (millions)',
+				align: 'high'
+			},
+			labels: {
+				overflow: 'justify'
+			}
+		},
+		tooltip: {
+			valueSuffix: ' millions'
+		},
+		plotOptions: {
+			bar: {
+				dataLabels: {
+					enabled: true
+				}
+			}
+		},
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'top',
+			x: -40,
+			y: 80,
+			floating: true,
+			borderWidth: 1,
+			backgroundColor:
+				Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+			shadow: true
+		},
+		credits: {
+			enabled: false
+		},
+		series: [{
+			name: 'Population',
+			data: <%= bar_chart_data(:population) %>
+		}, {
+			name: 'Number of Tests',
+			data: <%= bar_chart_data(:tests) %>
+		}]
+	});
 </script>
