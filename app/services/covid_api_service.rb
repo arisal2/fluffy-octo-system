@@ -2,6 +2,8 @@
 
 # Service to fetch covid data
 class CovidApiService
+  OPTIONS = %w[all countries continents].freeze
+
   def initialize(option:)
     @option = option
   end
@@ -15,7 +17,7 @@ class CovidApiService
   attr_reader :option
 
   def select_api
-    return call_api(ENV['DISEASES_API'] + option) if option.eql?('all') || option.eql?('countries')
+    return call_api(ENV['DISEASES_API'] + option) if OPTIONS.include?(option)
     return call_api(ENV['VACCINATION_API']) if option.eql?('vaccine')
 
     call_api(ENV['CORONA_TIMELINE_API'])
