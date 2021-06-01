@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+# Shim to load environment variables from .env into ENV in development.
+gem 'dotenv-rails', require: 'dotenv/rails-now', groups: %i[development test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use postgresql as the database for Active Record
@@ -34,6 +38,12 @@ gem 'rest-client', '~> 2.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'ajax-datatables-rails'
+gem 'bootstrap', '~> 4.0.0'
+gem 'chartkick'
+gem 'font-awesome-rails'
+gem 'jquery-datatables'
+gem 'jquery-rails'
 gem 'rubocop-rails', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
