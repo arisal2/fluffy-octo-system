@@ -7,7 +7,7 @@ class CovidApiService
   end
 
   def retrieve_data
-    select_api
+    parsed_response
   end
 
   private
@@ -25,6 +25,10 @@ class CovidApiService
     response = RestClient::Request.execute(method: :get, url: url,
                                            timeout: 10)
 
-    JSON.parse(response.body)
+    response.body
+  end
+
+  def parsed_response
+    @parsed_response ||= JSON.parse(select_api)
   end
 end

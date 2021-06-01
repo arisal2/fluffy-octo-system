@@ -1,4 +1,44 @@
 // Place all the styles related to the Dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.new-case {
+    color: orange;
+}
 
+.new-death,
+.case-critical {
+    color: red;
+}
+
+.new-recovered {
+    color: green;
+}
+
+.case-active {
+    color: blue;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar {
+    margin-left: 5px;
+}
+
+h6 {
+    padding-left: 10px;
+}
+
+.sidebar {
+    background: lightgray;
+    padding-left: 2pc;
+}
+
+li {
+    font-size: 12px;
+    a {
+        color: darkslategrey
+    }
+}

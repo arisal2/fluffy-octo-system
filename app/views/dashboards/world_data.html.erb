@@ -1,7 +1,30 @@
 <div class="row">
     <%= render 'shared/sidebar' %>
-    <div class="container col-md-10">
-        <table id="world-data" class="table table-hover" %>
+    <div class="col-md-10">
+        <div class="row top-header">
+            <h6> Cumulative & Actual World cases COVID-19 Coronavirus Pandemic. Last update: <%= current_date %></h6>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3">
+                <%= fa_icon "ambulance" %>&nbsp;&nbsp;Currently Active: <span class="case-active"><%= number_with_delimiter(@general_data['active'], :delimiter => ',') %></span>
+            </div>
+            <div class="col-md-3">
+                <%= fa_icon "file" %>&nbsp;&nbsp;Total Confirmed: <span class="new-case"><%= number_with_delimiter(@general_data['cases'], :delimiter => ',') %></span>
+            </div>
+            <div class="col-md-3">
+                <%= fa_icon "heartbeat" %>&nbsp;&nbsp;Total Recovered: <span class="new-recovered"><%= number_with_delimiter(@general_data['recovered'], :delimiter => ',') %></span>
+            </div>
+            <div class="col-md-3">
+                <%= fa_icon "bed" %>&nbsp;&nbsp;Total Deaths: <span class="case-critical"><%= number_with_delimiter(@general_data['deaths'], :delimiter => ',') %></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <h6> Reported Cases by Country, Territory, or Conveyance </h6>
+        </div>
+        <br />
+        <table id="world-data" class="table table-striped" %>
             <thead>
                 <tr>
                     <th>Flags</th>
@@ -25,16 +48,16 @@
                     <td><%= image_tag(data['countryInfo']['flag'], height: '32', width: '32', alt: data['country'])%></td>
                     <td><%= data['countryInfo']['iso3'] %></td>
                     <td><%= data['country'] %></td>
-                    <td><%= data['todayCases'] %></td>
-                    <td><%= data['todayDeaths'] %></td>
-                    <td><%= data['todayRecovered'] %></td>
-                    <td><%= data['active'] %></td>
-                    <td><%= data['critical'] %></td>
-                    <td><%= data['cases'] %></td>
-                    <td><%= data['recovered'] %></td>
-                    <td><%= data['deaths'] %></td>
-                    <td><%= data['tests'] %></td>
-                    <td><%= data['population'] %></td>
+                    <td class="new-case"><%= number_with_delimiter("+#{data['todayCases']}", :delimiter => ',') %></td>
+                    <td class="new-death"><%= number_with_delimiter("+#{data['todayDeaths']}", :delimiter => ',') %></td>
+                    <td class="new-recovered"><%= number_with_delimiter("+#{data['todayRecovered']}", :delimiter => ',') %></td>
+                    <td class="case-active"><%= number_with_delimiter(data['active'], :delimiter => ',') %></td>
+                    <td class="case-critical"><%= number_with_delimiter(data['critical'], :delimiter => ',') %></td>
+                    <td><%= number_with_delimiter(data['cases'], :delimiter => ',') %></td>
+                    <td><%= number_with_delimiter(data['recovered'], :delimiter => ',') %></td>
+                    <td><%= number_with_delimiter(data['deaths'], :delimiter => ',') %></td>
+                    <td><%= number_with_delimiter(data['tests'], :delimiter => ',') %></td>
+                    <td><%= number_with_delimiter(data['population'], :delimiter => ',') %></td>
                 </tr>
                 <% end %>
             </tbody>

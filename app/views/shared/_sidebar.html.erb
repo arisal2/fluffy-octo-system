@@ -1,8 +1,26 @@
-  <div class="container col-md-2">
-        <ul>
+<div class="sidebar col-md-1">
+    <ul>
+        <br>
+        <div class="sidebar-element">
+            <%= fa_icon "medkit" %>
             <li><%= link_to "World Data", world_data_dashboards_path %></li>
+        </div>
+        <br>
+        <div class="sidebar-element">
+            <%= fa_icon "stethoscope" %>
             <li><%= link_to "Vaccination Data", vaccination_dashboards_path %></li>
+        </div>
+        <br>
+        <div class="sidebar-element">
+            <%= fa_icon "map-o" %>
             <li><%= link_to "World Map", world_map_dashboards_path %></li>
-            <li><%= link_to "Reports", covid_chart_dashboards_path %></li>
-        </ul>
-    </div>
+        </div>
+        <br>
+        <div class="sidebar-element">
+            <li>
+                <%= fa_icon "bar-chart" %>
+                <%= link_to "Reports", covid_chart_dashboards_path %>
+            </li>
+        </div>
+    </ul>
+</div>
