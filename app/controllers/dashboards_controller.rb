@@ -3,31 +3,21 @@
 # Controller to handle covid dashboard actions
 class DashboardsController < ApplicationController
   def world_data
-    @world_data = countries_data
-    @general_data = api_service('all')
+    @world_data = ReportService.process_table_data('countries')
+    @general_data = ReportService.process_table_data('all')
   end
 
   def vaccination
-    @vaccination_data = api_service('vaccine')
+    @vaccination_data = ReportService.process_table_data('vaccine')
   end
 
   def covid_chart
-    @charts_data = api_service('continents')
-    @time_line_data = api_service
+    @area_chart = ReportService.process_area_chart_data
+    @bar_chart = ReportService.process_bar_chart_data('continents')
   end
 
   def world_map
-    @world_maps = api_service('jhucsse')
-    @world_data = countries_data
-  end
-
-  private
-
-  def countries_data
-    api_service('countries')
-  end
-
-  def api_service(option = nil)
-    CovidApiService.new(option: option).retrieve_data
+    @covid_cases_map_data = ReportService.process_covid_map_data('countries', true)
+    @covid_death_map_data = ReportService.process_covid_map_data('countries', false)
   end
 end
