@@ -11,26 +11,26 @@ module DashboardsHelper
   end
 
   def currently_active
-    @currently_active ||= number_with_delimiter(@general_data['active'], delimiter: ',')
+    number_with_delimiter(@general_data['active'], delimiter: ',')
   end
 
   def total_confirmed
-    @total_confirmed ||= number_with_delimiter(@general_data['cases'], delimiter: ',')
+    number_with_delimiter(@general_data['cases'], delimiter: ',')
   end
 
   def total_recovered
-    @total_recovered ||= number_with_delimiter(@general_data['recovered'], delimiter: ',')
+    number_with_delimiter(@general_data['recovered'], delimiter: ',')
   end
 
-  def total_death
-    @total_death ||= number_with_delimiter(@general_data['deaths'], delimiter: ',')
+  def total_deaths
+    number_with_delimiter(@general_data['deaths'], delimiter: ',')
   end
 
   def total_vaccinations
-    @total_vaccinations ||= number_with_delimiter(@vaccination_data['OWID_WRL']['total_vaccinations'], delimiter: ',')
+    number_with_delimiter(@vaccination_data['OWID_WRL']['total_vaccinations'], delimiter: ',')
   end
 
   def total_population
-    @total_population ||= number_with_delimiter(@vaccination_data['OWID_WRL']['population'], delimiter: ',')
+    number_with_delimiter(@vaccination_data['OWID_WRL']['population'], delimiter: ',')
   end
 end
