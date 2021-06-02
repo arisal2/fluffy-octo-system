@@ -1,0 +1,89 @@
+
+<p></p>
+<div class="row">
+  <div class="col-md-3">
+    <div class="container top-section">
+      <form action="/symptoms/diagnosis" method="GET" class=form-horizontal>
+        <div class="form-group">
+          <div class="col-md-6 mb-3">
+            <label for="SymptomId">Symptom ID</label>
+            <input class="form-control" type="text" name="symptoms" id="SymptomId" placeholder="10,20,30" required>
+            <div class="invalid-feedback">
+              Please provide Symptoms IDS.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 mb-3">
+            <label for="birthYear">Birth Year</label>
+            <input class="form-control" type="text" name="year" id="birthYear" placeholder="29" required>
+            <div class="invalid-feedback">
+              Please provide your birth year.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" checked>
+            <label class="form-check-label" for="gender2">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">
+            <label class="form-check-label" for="gender2">
+              Female
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <table id="symptoms-datatable" class="table table-hover" data-source="<%= symptoms_path(format: :json) %>">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Symptom ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#symptoms-datatable').dataTable({
+      processing: true,
+      serverSide: true,
+      select: true,
+      responsive: true,
+      scrollX: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ],
+      ajax: {
+        url: $('#symptoms-datatable').data('source')
+      },
+      pagingType: "full_numbers",
+      columns: [{
+          data: "id"
+        },
+        {
+          data: "symptom_id"
+        },
+        {
+          data: "name"
+        },
+      ]
+    });
+  });
+</script>
