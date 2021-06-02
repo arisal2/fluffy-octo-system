@@ -44,7 +44,18 @@ class ReportService
     end.to_json
   end
 
+  def self.process_diagnosis_data(params)
+    diagnosis_data = api_medic_service(params)
+    return if diagnosis_data.eql?('symptoms are invalid or symptoms are in invalid format!')
+
+    diagnosis_data
+  end
+
   def self.api_service(option = nil)
     CovidApiService.new(option: option).retrieve_data
+  end
+
+  def self.api_medic_service(params)
+    ApiMedicService.new(params: params).retrieve_diagnosis
   end
 end

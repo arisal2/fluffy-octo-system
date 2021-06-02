@@ -24,8 +24,7 @@ class CovidApiService
   end
 
   def call_api(url)
-    response = RestClient::Request.execute(method: :get, url: url,
-                                           timeout: 10)
+    response = Faraday.get url
 
     response.body
   end
