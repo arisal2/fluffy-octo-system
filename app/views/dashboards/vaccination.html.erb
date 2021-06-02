@@ -1,15 +1,14 @@
 <div class="row"> 
-	<%= render 'shared/sidebar' %>
-	<div class="col-md-10">
+	<div class="container-fluid col-md-11">
 		<div class="row top-header">
 			<h6> <%= fa_icon "line-chart" %> Data on COVID-19 vaccinations about the Coronavirus Pandemic. </h6>
 		</div>
 		<br />
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 vaccine-data">
 				<%= fa_icon "plus-square" %>&nbsp;&nbsp;Total Vaccinations: <span class="positive"><%= vaccination_top_section('total_vaccinations') %></span>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 vaccine-data">
 				<%= fa_icon "users" %>&nbsp;&nbsp;Total Population: <span class="new-case"><%= vaccination_top_section('population') %></span>
 			</div>
 		</div>
@@ -18,7 +17,7 @@
 			<h6> <%= fa_icon "table" %> Reported Cases by Country, Territory, or Conveyance </h6>
 		</div>
 		<br />
-		<table id="vaccine-data" class="table table-striped" %>
+		<table id="vaccine-data" class="table table-hover" %>
 			<thead>
 				<tr>
 					<th>Continent</th>
