@@ -1,21 +1,21 @@
 <div class="row">
-	<%= render 'shared/sidebar' %>
-	<div class="col-md-10">
+	<div class="container-fluid col-md-11">
 		<div class="row top-header">
+			<br />
 			<h6> <%= fa_icon "line-chart" %> Data on COVID-19 vaccinations about the Coronavirus Pandemic. Last update: <%= latest_update %></h6>
 		</div>
 		<br />
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 world-data">
 				<%= fa_icon "ambulance" %>&nbsp;&nbsp;Currently Active: <span class="positive"><%= world_data_top_section('active') %></span>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 world-data">
 				<%= fa_icon "file" %>&nbsp;&nbsp;Total Confirmed: <span class="new-case"><%= world_data_top_section('cases') %></span>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 world-data">
 				<%= fa_icon "heartbeat" %>&nbsp;&nbsp;Total Recovered: <span class="favorable"><%= world_data_top_section('recovered') %></span>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 world-data">
 				<%= fa_icon "bed" %>&nbsp;&nbsp;Total Deaths: <span class="critical"><%= world_data_top_section('deaths') %></span>
 			</div>
 		</div>
@@ -24,7 +24,7 @@
 			<h6> <%= fa_icon "table" %> Reported Cases by Country, Territory, or Conveyance </h6>
 		</div>
 		<br />
-		<table id="world-data" class="table table-striped" %>
+		<table id="world-data" class="table table-hover" %>
 			<thead>
 				<tr>
 					<th>Flags</th>
