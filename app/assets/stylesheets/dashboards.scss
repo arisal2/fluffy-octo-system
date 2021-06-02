@@ -29,15 +29,28 @@ h6,
 .world-data,
 .vaccine-data {
   padding-left: 30px;
+  font-family: Consolas, monaco, monospace;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
 }
 
 .top-header {
   padding-top: 15px;
 }
 
+.table.dataTable {
+  font-family: Consolas, monaco, monospace;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+}
 
 /* Table */
-
 
 /* Highchart */
 

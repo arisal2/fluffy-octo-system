@@ -12,8 +12,17 @@
  *
  */
 
-@import 'bootstrap';
-@import 'datatables';
-@import 'font-awesome';
-@import 'dashboards';
-@import 'symptoms';
+@import "bootstrap";
+@import "datatables";
+@import "font-awesome";
+@import "dashboards";
+@import "symptoms";
+
+.nav-item {
+  font-family: Consolas, monaco, monospace;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+}
