@@ -1,81 +1,79 @@
-<div class="row">
-	<div class="container-fluid col-md-11">
-		<div class="row top-header">
-			<br />
-			<h6> <%= fa_icon "line-chart" %> Data on COVID-19 vaccinations about the Coronavirus Pandemic. Last update: <%= latest_update %></h6>
-		</div>
-		<br />
-		<div class="row">
-			<div class="col-md-3 world-data">
-				<%= fa_icon "ambulance" %>&nbsp;&nbsp;Currently Active: <span class="positive"><%= world_data_top_section('active') %></span>
-			</div>
-			<div class="col-md-3 world-data">
-				<%= fa_icon "file" %>&nbsp;&nbsp;Total Confirmed: <span class="new-case"><%= world_data_top_section('cases') %></span>
-			</div>
-			<div class="col-md-3 world-data">
-				<%= fa_icon "heartbeat" %>&nbsp;&nbsp;Total Recovered: <span class="favorable"><%= world_data_top_section('recovered') %></span>
-			</div>
-			<div class="col-md-3 world-data">
-				<%= fa_icon "bed" %>&nbsp;&nbsp;Total Deaths: <span class="critical"><%= world_data_top_section('deaths') %></span>
-			</div>
-		</div>
-		<br />
-		<div class="row">
-			<h6> <%= fa_icon "table" %> Reported Cases by Country, Territory, or Conveyance </h6>
-		</div>
-		<br />
-		<table id="world-data" class="table table-hover" %>
-			<thead>
-				<tr>
-					<th>Flags</th>
-					<th>Codes</th>
-					<th>Country</th>
-					<th>New Cases</th>
-					<th>New Deaths</th>
-					<th>New recovered</th>
-					<th>Active</th>
-					<th>Critical</th>
-					<th>Total Confirmed</th>
-					<th>Total Recovered</th>
-					<th>Total Deaths</th>
-					<th>Total Tests</th>
-					<th>Population</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @world_data.each do |data| %>
-				<tr>
-					<td><%= image_tag(data['countryInfo']['flag'], height: '32', width: '32', alt: data['country'], delimiter: ',')%></td>
-					<td><%= data['countryInfo']['iso3'] %></td>
-					<td><%= data['country'] %></td>
-					<td class="new-case"><%= number_with_delimiter("+#{data['todayCases']}", delimiter: ',')%></td>
-					<td class="critical"><%= number_with_delimiter("+#{data['todayDeaths']}", delimiter: ',')%></td>
-					<td class="favorable"><%= number_with_delimiter("+#{data['todayRecovered']}", delimiter: ',')%></td>
-					<td class="positive"><%= number_with_delimiter(data['active'], delimiter: ',')%></td>
-					<td class="critical"><%= number_with_delimiter(data['critical'], delimiter: ',')%></td>
-					<td><%= number_with_delimiter(data['cases'], delimiter: ',')%></td>
-					<td><%= number_with_delimiter(data['recovered'], delimiter: ',')%></td>
-					<td><%= number_with_delimiter(data['deaths'], delimiter: ',')%></td>
-					<td><%= number_with_delimiter(data['tests'], delimiter: ',')%></td>
-					<td><%= number_with_delimiter(data['population'], delimiter: ',')%></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
-	</div>
+<div class="container-fluid col-md-11">
+  <div class="row top-header">
+    <br />
+    <h6> <%= fa_icon "line-chart" %> Data on COVID-19 vaccinations about the Coronavirus Pandemic. Last update: <%= latest_update %></h6>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-3 world-data">
+      <%= fa_icon "ambulance" %>&nbsp;&nbsp;Currently Active: <span class="positive"><%= world_data_top_section('active') %></span>
+    </div>
+    <div class="col-md-3 world-data">
+      <%= fa_icon "file" %>&nbsp;&nbsp;Total Confirmed: <span class="new-case"><%= world_data_top_section('cases') %></span>
+    </div>
+    <div class="col-md-3 world-data">
+      <%= fa_icon "heartbeat" %>&nbsp;&nbsp;Total Recovered: <span class="favorable"><%= world_data_top_section('recovered') %></span>
+    </div>
+    <div class="col-md-3 world-data">
+      <%= fa_icon "bed" %>&nbsp;&nbsp;Total Deaths: <span class="critical"><%= world_data_top_section('deaths') %></span>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <h6> <%= fa_icon "table" %> Reported Cases by Country, Territory, or Conveyance </h6>
+  </div>
+  <br />
+  <table id="world-data" class="table table-hover" %>
+    <thead>
+      <tr>
+        <th>Flags</th>
+        <th>Codes</th>
+        <th>Country</th>
+        <th>New Cases</th>
+        <th>New Deaths</th>
+        <th>New recovered</th>
+        <th>Active</th>
+        <th>Critical</th>
+        <th>Total Confirmed</th>
+        <th>Total Recovered</th>
+        <th>Total Deaths</th>
+        <th>Total Tests</th>
+        <th>Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @world_data.each do |data| %>
+      <tr>
+        <td><%= image_tag(data['countryInfo']['flag'], height: '32', width: '32', alt: data['country'], delimiter: ',')%></td>
+        <td><%= data['countryInfo']['iso3'] %></td>
+        <td><%= data['country'] %></td>
+        <td class="new-case"><%= number_with_delimiter("+#{data['todayCases']}", delimiter: ',')%></td>
+        <td class="critical"><%= number_with_delimiter("+#{data['todayDeaths']}", delimiter: ',')%></td>
+        <td class="favorable"><%= number_with_delimiter("+#{data['todayRecovered']}", delimiter: ',')%></td>
+        <td class="positive"><%= number_with_delimiter(data['active'], delimiter: ',')%></td>
+        <td class="critical"><%= number_with_delimiter(data['critical'], delimiter: ',')%></td>
+        <td><%= number_with_delimiter(data['cases'], delimiter: ',')%></td>
+        <td><%= number_with_delimiter(data['recovered'], delimiter: ',')%></td>
+        <td><%= number_with_delimiter(data['deaths'], delimiter: ',')%></td>
+        <td><%= number_with_delimiter(data['tests'], delimiter: ',')%></td>
+        <td><%= number_with_delimiter(data['population'], delimiter: ',')%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 
 <script>
-	$(document).ready(function() {
-		$("#world-data").dataTable({
-			select: true,
-			responsive: true,
-			scrollX: true,
-			dom: 'Bfrtip',
-			buttons: [
-				'copy', 'csv', 'excel', 'pdf', 'print'
-			]
-		});
-	});
+  $(document).ready(function() {
+    $("#world-data").dataTable({
+      select: true,
+      responsive: true,
+      scrollX: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    });
+  });
 </script>

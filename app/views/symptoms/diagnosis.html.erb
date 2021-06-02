@@ -1,0 +1,44 @@
+<div class="container-fluid col-md-11">
+  <table id="diagnosis-data" class="table table-hover" %>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Accuracy</th>
+        <th>ICD</th>
+        <th>ICD Name</th>
+        <th>Prof Name</th>
+        <th>Ranking</th>
+        <th>Specialisation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @diagnosis_data.each do |data| %>
+      <tr>
+        <td><%= data["Issue"]["ID"]%></td>
+        <td><%= data["Issue"]["Name"]%></td>
+        <td><%= data["Issue"]["Accuracy"]%></td>
+        <td><%= data["Issue"]["Icd"]%></td>
+        <td><%= data["Issue"]["IcdName"]%></td>
+        <td><%= data["Issue"]["ProfName"]%></td>
+        <td><%= data["Issue"]["Ranking"]%></td>
+        <td><%= data["Specialisation"][0]["Name"]%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#diagnosis-data").dataTable({
+      select: true,
+      responsive: true,
+      scrollX: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    });
+  });
+</script>
