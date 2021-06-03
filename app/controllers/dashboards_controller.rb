@@ -12,12 +12,13 @@ class DashboardsController < ApplicationController
   end
 
   def covid_chart
-    @area_chart = ReportService.process_area_chart_data
+    @area_chart = ReportService.process_area_chart_data('timeline')
     @bar_chart = ReportService.process_bar_chart_data('continents')
   end
 
   def world_map
-    @covid_cases_map_data = ReportService.process_covid_map_data('countries', true)
-    @covid_death_map_data = ReportService.process_covid_map_data('countries', false)
+    @covid_cases_map_data = ReportService.process_covid_map_data('countries', 'cases')
+    @covid_death_map_data = ReportService.process_covid_map_data('countries', 'deaths')
+    p @covid_cases_map_data
   end
 end

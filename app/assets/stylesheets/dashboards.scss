@@ -5,11 +5,11 @@
 /* Table */
 
 .new-case {
-  color: orange;
+  color: #eb4934;
 }
 
 .critical {
-  color: red;
+  color: #db0004;
 }
 
 .favorable {
@@ -29,15 +29,26 @@ h6,
 .world-data,
 .vaccine-data {
   padding-left: 30px;
+  font-family: Consolas, monaco, monospace;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 26.4px;
 }
 
 .top-header {
   padding-top: 15px;
 }
 
+.table.dataTable {
+  font-family: Consolas, monaco, monospace;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 26.4px;
+}
 
 /* Table */
-
 
 /* Highchart */
 
