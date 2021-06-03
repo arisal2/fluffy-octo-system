@@ -6,23 +6,23 @@
     <a class="navbar-brand" href="/"><%= image_tag('medical_nav.ico') %></a>
     <ul class="nav nav-navbar">
       <li class="nav-item">
-        <%= fa_icon "medkit" %>&nbsp;&nbsp;<%= link_to "Active Cases", world_data_dashboards_path %>&nbsp;
+        <%= fa_icon "medkit" %>&nbsp;<%= link_to "Active Cases", world_data_dashboards_path %>&nbsp;
       </li>
       &nbsp;&nbsp;
       <li class="nav-item">
-        <%= fa_icon "stethoscope" %>&nbsp;&nbsp;<%= link_to "Vaccine Data", vaccination_dashboards_path %>&nbsp;
+        <%= fa_icon "stethoscope" %>&nbsp;<%= link_to "Vaccine Data", vaccination_dashboards_path %>&nbsp;
       </li>
       &nbsp;&nbsp;
       <li class="nav-item">
-        <%= fa_icon "map-o" %>&nbsp;&nbsp;<%= link_to "Maps", world_map_dashboards_path %>&nbsp;
+        <%= fa_icon "map-o" %>&nbsp;<%= link_to "Maps", world_map_dashboards_path %>&nbsp;
       </li>
       &nbsp;&nbsp;
       <li class="nav-item">
-        <%= fa_icon "bar-chart" %>&nbsp;&nbsp;<%= link_to "Reports", covid_chart_dashboards_path %>&nbsp;&nbsp;
+        <%= fa_icon "bar-chart" %>&nbsp;<%= link_to "Reports", covid_chart_dashboards_path %>&nbsp;&nbsp;
       </li>
       <% if user_signed_in? %>
       <li class="nav-item">
-        <%= fa_icon "user-md" %>&nbsp;&nbsp;<%= link_to 'Diagnosis', symptoms_path %>&nbsp;
+        <%= fa_icon "user-md" %>&nbsp;<%= link_to 'Diagnosis', symptoms_path %>&nbsp;
       </li>
       <% end %>
     </ul>
