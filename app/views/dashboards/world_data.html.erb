@@ -42,7 +42,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @world_data.each do |data| %>
+      <% @world_data&.each do |data| %>
       <tr>
         <td><%= image_tag(data['countryInfo']['flag'], height: '32', width: '32', alt: data['country'], delimiter: ',')%></td>
         <td><%= data['countryInfo']['iso3'] %></td>

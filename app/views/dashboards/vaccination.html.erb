@@ -34,7 +34,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% @vaccination_data.each do |data| %>
+			<% @vaccination_data&.each do |data| %>
 			<tr>
 				<td><%= data.second["continent"]%></td>
 				<td><%= data.second["location"]%></td>
