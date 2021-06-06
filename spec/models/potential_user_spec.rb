@@ -2,6 +2,7 @@
 
 require 'rails_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe PotentialUser, type: :model do
   subject { described_class }
 
@@ -19,11 +20,13 @@ RSpec.describe PotentialUser, type: :model do
 
   describe '::validate_email' do
     let!(:potential_user_valid) { FactoryBot.create(:potential_user) }
-    let!(:potential_user_invalid) { FactoryBot.create(:potential_user, name: "Example 2", email: 'example2@example.com') }
-    let!(:potential_user_regex) { FactoryBot.create(:potential_user, name: "Example 3", email: "example.example.com") }
-    before { 
-      create_configuration(verifier_email: 'email@gmail.com', verifier_domain: 'gmail.com') 
-    }
+    let!(:potential_user_invalid) do
+      FactoryBot.create(:potential_user, name: 'Example 2', email: 'example2@example.com')
+    end
+    let!(:potential_user_regex) { FactoryBot.create(:potential_user, name: 'Example 3', email: 'example.example.com') }
+    before do
+      create_configuration(verifier_email: 'email@gmail.com', verifier_domain: 'gmail.com')
+    end
 
     context 'potential use has valid email' do
       it 'collects validated email' do
@@ -40,4 +43,5 @@ RSpec.describe PotentialUser, type: :model do
       end
     end
   end
+  # rubocop:enable Metrics/BlockLength
 end

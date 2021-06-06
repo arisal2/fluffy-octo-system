@@ -2,7 +2,7 @@
 
 # Class for custom log
 class CustomLog
-  def self.debug(message=nil)
+  def self.debug(message = nil)
     @my_log ||= Logger.new("#{Rails.root}/log/invalid_email.log")
     @my_log.debug(message) unless message.nil?
   end

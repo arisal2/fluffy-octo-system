@@ -2,6 +2,7 @@
 
 require 'rails_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe PotentialUsersController, type: :controller do
   before do
     user = FactoryBot.create(:user)
@@ -23,7 +24,7 @@ RSpec.describe PotentialUsersController, type: :controller do
   describe 'POST #import' do
     let(:potential_users_import) { post :import, params: params }
     context 'when logged in' do
-      let(:params) { {file: Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/files/example.csv")} }
+      let(:params) { { file: Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/files/example.csv") } }
 
       it 'redirects to the home page' do
         potential_users_import
@@ -37,3 +38,4 @@ RSpec.describe PotentialUsersController, type: :controller do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
