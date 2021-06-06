@@ -86,6 +86,7 @@ You can find the default user credentials inside the `db/seeds.rb` file
 - This application includes a feature to upload an email list, example provided with repo (email_list.csv).
 - After logging into the system, visit  `http://localhost:3000/potential_users` and upload the CSV file.
 - The Sidekiq is responsible for running a job that will send email to the list provided via the CSV file. All logs for the email valid and invalid will be logged in `email.log` inside the log folder.
+- If you are using your gmail account, you will have to enable less secure apps for sending an email.
 
 ## API and References
 - [disease.sh - Open Disease Data API](https://disease.sh)
