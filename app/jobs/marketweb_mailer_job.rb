@@ -7,8 +7,7 @@ class MarketwebMailerJob < ApplicationJob
   def perform(*_args)
     valid_emails = PotentialUser.validate_email
     valid_emails.each do |email|
-    def someting
-      MarketwebMailer.with(user: nil).marketweb.deliver_now
+      MarketwebMailer.with(user: email).marketweb.deliver_now
     rescue StandardError => e
       CustomLog.debug e.message.to_s
     end

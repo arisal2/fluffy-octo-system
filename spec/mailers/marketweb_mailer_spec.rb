@@ -8,7 +8,6 @@ RSpec.describe MarketwebMailer, type: :mailer do
 
     it 'renders the headers' do
       expect(mail.subject).to eq('Get the latest COVID-19 information and diagnosis information for any symptoms!')
-      expect(mail.from).to eq([ENV['TEST_EMAIL']])
       expect(mail.to).to eq(['user@example.com'])
     end
 
