@@ -8,5 +8,5 @@ Truemail.configure do |config|
   config.smtp_error_body_pattern = /(?=.*550)(?=.*(user|account|customer|mailbox)).*/i
   config.smtp_fail_fast = true
   config.smtp_safe_check = true
-  config.logger = { tracking_event: :error, stdout: true, log_absolute_path: "#{Rails.root}/log/invalid_email.log" }
+  config.logger = { tracking_event: :error, stdout: true, log_absolute_path: "#{Rails.root}/log/email.log" }
 end
