@@ -20,17 +20,20 @@ RSpec.describe PotentialUser, type: :model do
 
   describe '::validate_email' do
     let!(:potential_user_valid) { FactoryBot.create(:potential_user) }
-    let!(:potential_user_invalid) do
-      FactoryBot.create(:potential_user, name: 'Example 2', email: 'example2@example.com')
+    let!(:potential_user_not_reachable) do
+      FactoryBot.create(:potential_user, name: 'Example 2', email: 'example@gmail.com')
     end
-    let!(:potential_user_regex) { FactoryBot.create(:potential_user, name: 'Example 3', email: 'example.example.com') }
+    let!(:potential_user_invalid) do
+      FactoryBot.create(:potential_user, name: 'Example 3', email: 'example2@example.com')
+    end
+    let!(:potential_user_regex) { FactoryBot.create(:potential_user, name: 'Example 4', email: 'example.example.com') }
     before do
       create_configuration(verifier_email: 'email@gmail.com', verifier_domain: 'gmail.com')
     end
 
     context 'potential use has valid email' do
       it 'collects validated email' do
-        expect(subject.validate_email).to eq(['example@gmail.com'])
+        expect(subject.validate_email).to eq(['abhinavrisal99@gmail.com'])
       end
     end
   end

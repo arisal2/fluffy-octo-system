@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :potential_user do
     name { 'Example' }
-    email { 'example@gmail.com' }
+    email { 'abhinavrisal99@gmail.com' }
   end
 end
