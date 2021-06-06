@@ -34,7 +34,7 @@ This application depends on `.env.dev` file. An example of the environment file 
 
 Create an env file and copy all the requried fields from `env_example.txt`
 ```
-touch env.dev
+touch .env.dev
 ```
 
 ## Docker
