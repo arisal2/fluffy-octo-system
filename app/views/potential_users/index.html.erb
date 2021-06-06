@@ -1,0 +1,52 @@
+<div class="container-fluid col-md-10">
+	<h4> Import Potential User Data </h4>
+	<%= form_tag import_potential_users_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag 'Import from file' %>
+	<% end %>
+
+	<div class="col-md-6 table-section">
+		<table id="potential-users-datatable" class="table table-hover" data-source="<%= potential_users_path(format: :json) %>">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+<script>
+	$(document).ready(function() {
+		$('#potential-users-datatable').dataTable({
+			processing: true,
+			serverSide: true,
+			select: true,
+			responsive: true,
+			scrollX: true,
+			dom: 'Bfrtip',
+			buttons: [
+				'copy', 'csv', 'excel', 'pdf', 'print'
+			],
+			ajax: {
+				url: $('#potential-users-datatable').data('source')
+			},
+			pagingType: "full_numbers",
+			columns: [{
+				data: "id"
+				},
+				{
+					data: "name"
+				},
+				{
+					data: "email"
+				},
+			]
+		});
+	});
+</script>

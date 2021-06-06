@@ -1,7 +1,8 @@
-require 'rails_helper'
+# frozen_string_literal: true
+# require 'rails_helper'
 
-RSpec.describe "Symptoms", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
-  end
-end
+# RSpec.describe "Symptoms", type: :request do
+#   describe "GET /index" do
+#     pending "add some examples (or delete) #{__FILE__}"
+#   end
+# end

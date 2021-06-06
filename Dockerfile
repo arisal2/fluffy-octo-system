@@ -14,6 +14,5 @@ ENTRYPOINT ["entrypoint.sh"]
 ENV PORT 3000
 EXPOSE $PORT
 
-
 # Start the main process.
 CMD ["rails", "server", "-b", "0.0.0.0"]

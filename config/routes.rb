@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  require 'sidekiq/cron/web'
+
+  mount Sidekiq::Web => '/sidekiq'
+
   devise_for :users
 
   get 'home/index'
@@ -13,9 +18,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :symptoms, only: [:index]do
+  resources :symptoms, only: [:index] do
     collection do
       get :diagnosis
+    end
+  end
+
+  resources :potential_users do
+    collection do
+      post :import
     end
   end
 

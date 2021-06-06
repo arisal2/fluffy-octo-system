@@ -2,6 +2,8 @@
 
 # Migration to create users table
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize
   def change
     create_table :users do |t|
       ## Database authenticatable
@@ -41,4 +43,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     add_index :users, :confirmation_token,   unique: true
     add_index :users, :unlock_token,         unique: true
   end
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/AbcSize
 end

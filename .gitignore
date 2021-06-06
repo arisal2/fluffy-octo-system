@@ -121,9 +121,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
-.env.test
-.env*.local
+.env.dev
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -201,7 +199,7 @@ config/master.key
 
 # dotenv, dotenv-rails
 # TODO Comment out these rules if environment variables can be committed
-.env.*
+# .env.*
 
 ## Environment normalization:
 /.bundle
@@ -248,9 +246,6 @@ bower.json
 /test/tmp/
 /test/version_tmp/
 /tmp/
-
-# Used by dotenv library to load environment variables.
-# .env
 
 # Ignore Byebug command history file.
 
