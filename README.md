@@ -52,15 +52,15 @@ docker-compose run web bundle exec rake db:migrate
 docker-compose run web bundle exec rake db:seed
 ```
 
-Command to start the container only: 
+Command to start the container: 
 ```
 docker-compose up
 ```
-Command to stop the container only: 
+Command to stop the container: 
 ```
-docker-compose up
+docker-compose stop
 ```
-Command to remove the container only: 
+Command to remove the container: 
 ```
 docker-compose down
 ```
