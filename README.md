@@ -67,6 +67,16 @@ docker-compose down
 
 There is also a script included to clear everything docker related called `nuke-everything.sh`. Please be careful while using this script!
 
+To access the rails console:
+```
+docker-compose run web rails c
+```
+
+To run Rspec:
+```
+docker-compose run web rake spec
+```
+
 ## Application
 
 You can visit the UI at `http://localhost:3000`
