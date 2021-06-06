@@ -1,0 +1,4 @@
+marketweb_mailer_job:
+  cron: "* * * * *"
+  class: "MarketwebMailerJob"
+  queue: default
