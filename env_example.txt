@@ -1,5 +1,5 @@
-Example .env.dev environement file
-AUTHORIZATION value below is NOT SENSITIVE as it is for api medic sanbox mode only, hence sharing it in this text file.
+Example .env.dev environment file
+AUTHORIZATION value below is NOT SENSITIVE as it is for api medic sandbox mode only, hence sharing it in this text file.
 COPY FROM LINE 5
 
 DISEASES_API=https://disease.sh/v3/covid-19/
