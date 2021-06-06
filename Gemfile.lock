@@ -33,6 +33,8 @@ GEM
       activemodel (= 5.2.6)
       activesupport (= 5.2.6)
       arel (>= 9.0)
+    activerecord-import (1.1.0)
+      activerecord (>= 3.2)
     activestorage (5.2.6)
       actionpack (= 5.2.6)
       activerecord (= 5.2.6)
@@ -84,6 +86,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
+    connection_pool (2.2.5)
     crack (0.4.5)
       rexml
     crass (1.0.6)
@@ -99,12 +102,16 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    et-orbi (1.2.4)
+      tzinfo
     execjs (2.8.1)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     faraday (1.4.2)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -121,6 +128,9 @@ GEM
     ffi (1.15.1)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
+    fugit (1.4.5)
+      et-orbi (~> 1.1, >= 1.1.8)
+      raabro (~> 1.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashdiff (1.0.1)
@@ -167,6 +177,7 @@ GEM
     popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (3.12.6)
+    raabro (1.4.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -206,6 +217,10 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -256,6 +271,15 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sidekiq (6.2.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
+    sidekiq-cron (1.2.0)
+      fugit (~> 1.1)
+      sidekiq (>= 4.2.1)
+    simpleidn (0.2.1)
+      unf (~> 0.1.4)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -271,6 +295,12 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.10)
     time (0.1.0)
+    truemail (2.4.2)
+      simpleidn (~> 0.2.1)
+    truemail-rspec (0.6.0)
+      faker (~> 2.17)
+      rspec (~> 3.10)
+      truemail (>= 2.4)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -278,6 +308,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7)
     unicode-display_width (2.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -301,6 +334,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import
   ajax-datatables-rails
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
@@ -328,8 +362,12 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (~> 5.0)
   selenium-webdriver
+  sidekiq
+  sidekiq-cron
   spring
   spring-watcher-listen (~> 2.0.0)
+  truemail
+  truemail-rspec
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
