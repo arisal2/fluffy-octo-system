@@ -3,22 +3,19 @@
     <div class="card">
       <div class="card-header">
         <h3>Sign In</h3>
-        <div class="d-flex justify-content-end social_icon">
-          <span> <%= fa_icon "google-plus" %></span>
-        </div>
       </div>
       <div class="card-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="input-group form-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"><i class="user"></i></span>
+            <span class="input-group-text"><%= fa_icon "user" %></span>
           </div>
           <%= f.email_field :email, autofocus: true, class: 'form-control' %>
         </div>
 
         <div class="input-group form-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"><i class="key"></i></span>
+            <span class="input-group-text"><%= fa_icon "key" %></i></span>
           </div>
           <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
         </div>
@@ -31,7 +28,7 @@
         <% end -%>
 
         <div class="form-group">
-          <%= f.submit "Log in", class: "btn float-right login_btn" %>
+          <%= f.submit "Log in", class: "btn float-center login_btn" %>
         </div>
         <% end %>
 
