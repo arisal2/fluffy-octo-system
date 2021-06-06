@@ -32,10 +32,7 @@ You must have Docker & Docker Compose installed.
 
 This application depends on `.env.dev` file. An example of the environment file (`env_example.txt`) is also included. Please read the message inside the file, which contains API information and credentials, and generate it first, so that it loads properly when you setup docker.
 
-Create an env file and copy all the requried fields from `env_example.txt`
-```
-touch .env.dev
-```
+Create an .env.dev file in the root directory and copy all the requried fields from `env_example.txt`
 
 ## Docker
 After cloning the repository, run the command:
