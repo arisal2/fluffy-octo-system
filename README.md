@@ -85,3 +85,7 @@ You can find the default user credentials inside the `db/seeds.rb` file
 - [OWID](https://ourworldindata.org)
 - [Corona API](https://corona-api.com)
 - [API Medic](https://apimedic.com)
+
+## Other
+
+- Please find the login module architecture in the login_module_diagrams folder
