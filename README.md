@@ -30,8 +30,7 @@ You must have Docker & Docker Compose installed.
 
 ## Environment File
 
-This application depends on .env.dev file
-An example environment file is also included. Please read the message inside the file, which contains API information and credentials, and genrate it first, so that it loads properly when you setup docker.
+This application depends on .env.dev file. An example of the environment file (`env_example.txt`) is also included. Please read the message inside the file, which contains API information and credentials, and genrate it first, so that it loads properly when you setup docker.
 
 ```
 touch env.dev
@@ -75,7 +74,7 @@ You can find the default user credentials inside the `db/seeds.rb` file
 
 ## Sidekiq and CronJob
 - In the application you will find a file called `schedule.yml` where you can setup cron. For now it is setup for `01:00 every Sunday`. This cronjob will send an email at the time specified to a list of users.  This can be setup to whatever you want for development puropse.
- - Sidekiq UI - http://localhost:3000/sidekiq
+- Sidekiq UI - http://localhost:3000/sidekiq
 - Sidekiq Cron UI - http://localhost:3000/sidekiq/cron
 - This application includes a feature to upload an email list, example provided with repo (email_list.csv).
 - After logging into the system visit  `http://localhost:3000/potential_users` and upload the CSV file.
