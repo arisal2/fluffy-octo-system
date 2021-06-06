@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+         <div class="d-flex justify-content social_icon">
+          <span> <%= image_tag('logo.png') %></span>
+        </div>
+      <div class="card-header">
+        <h3>Sign In</h3>
+      </div>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="input-group form-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><%= fa_icon "user" %></span>
+          </div>
+          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        </div>
+
+        <div class="input-group form-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><%= fa_icon "key" %></i></span>
+          </div>
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+        <div class="row align-items-center remember">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+        <% end -%>
+
+        <div class="form-group">
+          <%= f.submit "Log in", class: "btn float-center login_btn" %>
+        </div>
+        <% end %>
+
+        <div class="card-footer">
+          <div class="d-flex justify-content-center links">
+            <div class="auth-links">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

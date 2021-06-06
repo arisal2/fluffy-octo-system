@@ -3,7 +3,7 @@
 # This script builds your application containers and bootstraps the database
 #
 
-DCD='docker-compose -f dcd.yml'
+DCD='docker-compose'
 
 # Build containers and initialize the app for the first time!
 echo "Building the containers..."

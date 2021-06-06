@@ -1,0 +1,13 @@
+Example .env.dev environement file
+AUTHORIZATION value below is NOT SENSITIVE as it is for api medic sanbox mode only, hence sharing it in this text file.
+COPY FROM LINE 5
+
+DISEASES_API=https://disease.sh/v3/covid-19/
+VACCINATION_API=https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.json
+CORONA_TIMELINE_API=https://corona-api.com/timeline
+API_MEDIC_SANDBOX_API_DIAGNOSIS=https://sandbox-healthservice.priaid.ch/diagnosis
+AUTHORIZATION=Bearer abhinavrisal99@gmail.com:O4yqq9B3HNogvNWL64qjPA==
+SMTP_ADDRESS=smtp.gmail.com
+SMTP_PASSWORD=
+SMTP_USER_NAME=
+REDIS_URL_SIDEKIQ=redis://redis:6379/1
