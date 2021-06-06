@@ -20,9 +20,6 @@ RSpec.describe PotentialUser, type: :model do
 
   describe '::validate_email' do
     let!(:potential_user_valid) { FactoryBot.create(:potential_user) }
-    let!(:potential_user_not_reachable) do
-      FactoryBot.create(:potential_user, name: 'Example 2', email: 'example@gmail.com')
-    end
     let!(:potential_user_invalid) do
       FactoryBot.create(:potential_user, name: 'Example 3', email: 'example2@example.com')
     end
