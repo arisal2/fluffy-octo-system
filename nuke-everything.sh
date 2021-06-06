@@ -3,14 +3,16 @@
 # USE AT YOUR OWN RISK
 # YOU HAVE BEEN WARNED
 
+# Uncomment below and run
+
 # echo 'Clearing containers...'
-docker rm -f $(docker ps -a -q)
+# docker rm -f $(docker ps -a -q)
 
 # echo 'Clearing images...'
-docker rmi -f $(docker images -a -q)
+#docker rmi -f $(docker images -a -q)
 
 # echo 'Clearing volumes...'
-docker volume prune
+# docker volume prune
 
 # echo 'Clearing networks...'
-docker network prune
+# docker network prune
