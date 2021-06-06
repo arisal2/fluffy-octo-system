@@ -30,19 +30,19 @@ You must have Docker & Docker Compose installed.
 
 ## Environment File
 
-This application depends on .env.dev file. An example of the environment file (`env_example.txt`) is also included. Please read the message inside the file, which contains API information and credentials, and genrate it first, so that it loads properly when you setup docker.
+This application depends on `.env.dev` file. An example of the environment file (`env_example.txt`) is also included. Please read the message inside the file, which contains API information and credentials, and generate it first, so that it loads properly when you setup docker.
 
+Create an env file and copy all the requried fields from `env_example.txt`
 ```
 touch env.dev
 ```
 
 ## Docker
-After cloning the repo, run the command:
+After cloning the repository, run the command:
 ```
 ./build.dev.sh
 ```
 This will build the docker containers, setup the database, and start the container.
-
 Also, you can use individual commands if you wish:
 
 ```
@@ -77,7 +77,7 @@ You can find the default user credentials inside the `db/seeds.rb` file
 - Sidekiq UI - http://localhost:3000/sidekiq
 - Sidekiq Cron UI - http://localhost:3000/sidekiq/cron
 - This application includes a feature to upload an email list, example provided with repo (email_list.csv).
-- After logging into the system visit  `http://localhost:3000/potential_users` and upload the CSV file.
+- After logging into the system, visit  `http://localhost:3000/potential_users` and upload the CSV file.
 - The Sidekiq is responsible for running a job that will send email to the list provided via the CSV file. All logs for the email valid and invalid will be logged in `email.log` inside the log folder.
 
 ## API and References
