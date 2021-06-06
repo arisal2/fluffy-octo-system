@@ -6,9 +6,9 @@
 ## Features
 - Live Covid-19 dashboard
 - Live vaccination records
-- World map and variuos reports
-- Diagnosis checker based on symptoms. 
-- Load and save potential user list
+- World map and various reports
+- Diagnosis checker based on symptoms
+- Load and save potential user list and send emails
 
 ## Tech
 
@@ -30,9 +30,9 @@ You must have Docker & Docker Compose installed.
 
 ## Environment File
 
-This application depends on `.env.dev` file. An example of the environment file (`env_example.txt`) is also included. Please read the message inside the file, which contains API information and credentials, and generate it first, so that it loads properly when you setup docker.
+This application depends on `.env.dev` file. An example of the environment file (`env_example.txt`) is also included. Please read the message inside the file which contains API information and credentials, and generate it first so that it loads properly when you setup docker.
 
-Create an .env.dev file in the root directory and copy all the requried fields from `env_example.txt`
+Create an `.env.dev` file in the root directory and copy all the requried fields from `env_example.txt`
 
 ## Docker
 After cloning the repository, run the command:
@@ -80,7 +80,7 @@ You can visit the UI at `http://localhost:3000`
 You can find the default user credentials inside the `db/seeds.rb` file
 
 ## Sidekiq and CronJob
-- In the application you will find a file called `schedule.yml` where you can setup cron. For now it is setup for `01:00 every Sunday`. This cronjob will send an email at the time specified to a list of users.  This can be setup to whatever you want for development puropse.
+- In the application you will find a file called `schedule.yml` where you can setup cron. For now it is setup for `01:00 every Sunday`. This cronjob will send an email at the time specified to a list of potential users.  This can be setup to whatever you want for development puropse.
 - Sidekiq UI - http://localhost:3000/sidekiq
 - Sidekiq Cron UI - http://localhost:3000/sidekiq/cron
 - This application includes a feature to upload an email list, example provided with repo (email_list.csv).
