@@ -73,11 +73,9 @@ There is also a script included to clear everything docker related called `nuke-
 You can visit the UI at `http://localhost:3000`
 
 ## Sidekiq and CronJob
-- In the appliaction you will find a file called `schedule.yml` where you can setup cron. For now it is setup for 01:00 every sunday. This cronjob will send email at the time specified.  This can be setup to whatever you want for development puropse.
+- In the application you will find a file called `schedule.yml` where you can setup cron. For now it is setup for `01:00 every Sunday`. This cronjob will send an email at the time specified to a list of users.  This can be setup to whatever you want for development puropse.
  - Sidekiq UI - http://localhost:3000/sidekiq
 - Sidekiq Cron UI - http://localhost:3000/sidekiq/cron
 - This application includes a feature to upload an email list, example provided with repo (email_list.csv).
 - After logging into the system visit  `http://localhost:3000/potential_users` and upload the CSV file.
 - The Sidekiq is responsible for running a job that will send email to the list provided via the CSV file. All logs for the email valid and invalid will be logged in `email.log` inside the log folder.
-
-
