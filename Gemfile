@@ -38,6 +38,7 @@ gem 'faraday'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'activerecord-import'
 gem 'ajax-datatables-rails'
 gem 'bootstrap', '~> 4.0.0'
 gem 'chartkick'
@@ -45,6 +46,9 @@ gem 'font-awesome-rails'
 gem 'jquery-datatables'
 gem 'jquery-rails'
 gem 'rubocop-rails', require: false
+gem 'sidekiq'
+gem 'sidekiq-cron'
+gem 'truemail'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -54,6 +58,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'truemail-rspec', require: false
 end
 
 group :development do
