@@ -4,7 +4,7 @@
 # YOU HAVE BEEN WARNED
 
 # Uncomment below and run
-
+# something updated
 # echo 'Clearing containers...'
 # docker rm -f $(docker ps -a -q)
 
