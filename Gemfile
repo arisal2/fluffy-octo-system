@@ -40,7 +40,7 @@ gem 'faraday'
 # gem 'capistrano-rails', group: :development
 gem 'activerecord-import'
 gem 'ajax-datatables-rails'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'chartkick'
 gem 'font-awesome-rails'
 gem 'jquery-datatables'
